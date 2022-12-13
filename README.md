@@ -26,8 +26,26 @@ The prompt for user input in the web, backend logic, and the ability to save see
 2.  GitHub problems.
 
 ## How I cheated ##
-While I was setting up Gitlab, I noticed 
+While I was setting up Gitlab, I noticed  the Codespace and used this to develop and save my code.
 
-## Whaat I would do if I had more time ##
-1. If I had another hour:
-- get session code t
+## What I would do if I had more time ##
+1. If I had another hour (I'd do one or more of the following):
+- get session code to work
+- add logic to save session["game"] to dictionary
+- (probably not enough time)
+- add logic for autogenerate moves
+
+2.  if I had another 3 hours;
+- official unit tests and smokescreen tests
+
+3.  If I had another 3 days:
+- update game.py to be a model, dockerize, use a postgres database to save
+output
+- add deployment scripts
+- associate session with login/auth
+
+## Run ##
+1. Got to [rock-paper-scissors codespace](https://erica-snake-case-super-duper-rotary-phone-977gw57v565fqjg.github.dev/)
+
+2.  Be sure to navigate to http://127.0.0.1:5000 because the session won't work in the preview (learned that one the hard way)
+
