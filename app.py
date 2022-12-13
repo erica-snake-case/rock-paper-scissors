@@ -27,10 +27,10 @@ def play_game():
 @app.route("/game/play/<symbol1>/<symbol2>", methods = ['GET'])
 def update_game(symbol1, symbol2):
     result = get_result(symbol1, symbol2)
-    print(get_result(symbol1,symbol2))
-    # session["result"] = result
-    # session["game"][result] += 1
-    # return render_template("play.html")
+    # TODO: bug session update isn't working; fix
+    session["result"] = result
+    session["game"][result] += 1
+    return render_template("play.html")
 
 # TODO:
 # @app.route("/game/quit")
@@ -40,6 +40,6 @@ def update_game(symbol1, symbol2):
 
 # TODO:
 # @app.route("/game/load")
-# save_game() 
-# session.pop("game")
-#session.pop("results")
+# get game from csv dict
+# add to session
+# redirect to play
