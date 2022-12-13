@@ -2,7 +2,7 @@
     <h2>How will everyone play?</h2>
     <form action="/game/play">
         <fieldset>
-            <legend>Player 1:</legend>
+            <legend> {{ session["game"]["player1_name"] }} </legend>
             <div>
               <input type="radio" id="rock" name="symbol1" value="rock">
               <label for="rock">Rock</label>
@@ -15,7 +15,7 @@
             </div>
           </fieldset>
           <fieldset>
-            <legend>Player 2</legend>
+            <legend> {{ session["game"]["player2_name"] }} </legend>
             <div>
               <input type="radio" id="rock" name="symbol2" value="rock">
               <label for="rock">Rock</label>
@@ -29,5 +29,5 @@
           </fieldset>
           <input type="submit" value="Send">
     </form>
-
+{{session}}
 </body>

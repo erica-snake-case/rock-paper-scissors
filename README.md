@@ -1,13 +1,33 @@
-# GitHub Codespaces ♥️ Flask
+# Rock, paper scissors -- the web app
+> Because you can never have enough screen time!
 
-Welcome to your shiny new Codespace running Flask! We've got everything fired up and running for you to explore Flask.
+- [How to play in the real world](https://en.wikipedia.org/wiki/Rock_paper_scissors)
+- [How to play using this web app](#Run)
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+## Strategy: ##
+> I pledged early on to restrict myself to the 3-hour time limit at the risk of seeming less efficient than developers who didn't.  I wrote this strategy to keep myself on track.  (Conf)
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+The prompt for user input in the web, backend logic, and the ability to save seems like an impossible task in 3 hours. 
 
-To run this application:
+### Priorities ###
+1. Working code for logic 
+2. A working web app ("in the web browser")
+3. Documentation
+4. Working database for the web app to store games
+5. Unit tests
+6. Security (this should be #1, but I determined the info saved to be non-sensitive)
+7. Deployability 
 
-```
-flask --debug run
-```
+## Personal challenges: ##
+> The effort that isn't reflected in my code
+1.  I had to re-learn Flask, which I hadn't used > 4 years, but wanted to showcase my Python skills.
+     - The prompt said code had to be displayed in the web browser
+     - AWS seems too specialized for a code challenge plus I don't have an AWS account
+2.  GitHub problems.
+
+## How I cheated ##
+While I was setting up Gitlab, I noticed 
+
+## Whaat I would do if I had more time ##
+1. If I had another hour:
+- get session code t

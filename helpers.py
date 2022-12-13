@@ -23,6 +23,9 @@ def get_result(symbol1, symbol2):
         return "player2_wins"
     return "ties"
 
+# TODO:
+# save_game(dictionary):
+# # append dictionary to csv
 
 # INFORMAL UNIT TESTING
 # print("expected = player1_wins")
