@@ -1,3 +1,4 @@
+# TODO: Move to database model once postgres implemented
 class Game:
     def __init__(self, name1,  name2):
         self.game_id = name1+name2 # TODO: implement better naming system

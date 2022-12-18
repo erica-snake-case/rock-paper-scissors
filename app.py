@@ -17,20 +17,16 @@ def create_game():
     return redirect(url_for("play_game"))
 
 
-@app.route("/game/play")
-@app.route("/game/play")
-def play_game():
-    return render_template("play.html")
-
-
-@app.route("/game/play/<symbol1>/<symbol2>", defaults={"symbol1": None, "symbol2": None})
+@app.route("/game/play/", defaults={"symbol1": None, "symbol2": None})
 @app.route("/game/play/<symbol1>/<symbol2>", methods = ['GET'])
-def update_game(symbol1, symbol2):
-    result = get_result(symbol1, symbol2)
-    # TODO: bug session update isn't working; fix
+def play_game(symbol1, symbol2):
+    if not request.args or request.args.get("symbol1") is None:
+        return render_template("play.html")
+    result = get_result(request.args.get("symbol1"), request.args.get("symbol2"))
     session["result"] = result
     session["game"][result] += 1
     return render_template("play.html")
+
 
 # TODO:
 # @app.route("/game/quit")
