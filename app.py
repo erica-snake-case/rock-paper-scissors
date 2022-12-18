@@ -3,23 +3,36 @@ from game import Game
 from helpers import get_result
 
 app = Flask(__name__)
-app.secret_key =  "STORE_THIS_SECRETLY" # TODO: update to use FLASK-SESSION for server-side storage
+app.secret_key = "STORE_THIS_SECRETLY"  # TODO: update to use FLASK-SESSION for server-side storage
+
 
 # TODO: escape all params
 
 @app.route("/")
 def create_game():
+    """
+    creates a game from player input
+    :return: redirects to play_game
+    """
     if not request.args or request.args.get("player1") is None or request.args["player1"] == "":
         # TODO: add error flashing
         return render_template("new.html")
-    game = Game(request.args["player1"], request.args["player2"]) # TODO: escape
+    game = Game(request.args["player1"], request.args["player2"])  # TODO: escape
     session["game"] = vars(game)
     return redirect(url_for("play_game"))
 
 
 @app.route("/game/play/", defaults={"symbol1": None, "symbol2": None})
-@app.route("/game/play/<symbol1>/<symbol2>", methods = ['GET'])
+@app.route("/game/play/<symbol1>/<symbol2>", methods=['GET'])
 def play_game(symbol1, symbol2):
+    """
+
+    :param symbol1: rock paper or scissors
+    :param symbol2: see above
+    :return: render template with page with scoring updated
+    """
+    result = get_result(symbol1, symbol2)
+    # TODO: bug session update isn't working; fix
     if not request.args or request.args.get("symbol1") is None:
         return render_template("play.html")
     result = get_result(request.args.get("symbol1"), request.args.get("symbol2"))
@@ -27,12 +40,11 @@ def play_game(symbol1, symbol2):
     session["game"][result] += 1
     return render_template("play.html")
 
-
 # TODO:
 # @app.route("/game/quit")
 # save_game() 
 # session.pop("game")
-#session.pop("results")
+# session.pop("results")
 
 # TODO:
 # @app.route("/game/load")
